@@ -1,5 +1,5 @@
-var express = require('express'),
-    reps = require('./lib/reps');
+var express = require('express');
+var reps = require('../lib/reps');
 
 var app = express();
 
