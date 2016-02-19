@@ -1,0 +1,42 @@
+html
+  head
+    title Who is my representative?
+  body
+    h1.main-title Search for Representatives
+    
+    form(method='get' action='/')
+      select(name='type')
+        option(value='zip' selected=(query.type === 'zip') ) Zip
+        option(value='name' selected=(query.type === 'name') ) Name
+        option(value='state' selected=(query.type === 'state') ) State
+      input(type='text' name='search' value=query.search)
+      button Submit 
+      
+    if query.type && query.search && !reps.length
+      p No reps found with #{query.type} of #{query.search}
+    
+    for rep in reps
+      h4= rep.name
+      ul
+        li= rep.state
+        li= rep.phone
+      hr
+      br
+    
+        
+        
+        
+        
+    //- .form-wrapper.another-class 
+    //-   input(type='text' name='name')
+    //- button
+    //- p= foo
+    //- p foo = #{foo}
+    //- if foo
+    //-   p Found Foo!
+    //- 
+    //- - arr.push(5)
+    //- //-This was a javascript use
+    //- ul
+    //-   for i in arr
+    //-     li= i
